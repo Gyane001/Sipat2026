@@ -997,7 +997,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1189,18 +1188,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &519420035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9119c83ea63f314085de6fb7bc40037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &573152542
 GameObject:
   m_ObjectHideFlags: 0
@@ -3453,7 +3440,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1559774624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c931159496ece4418a5d39558276d25, type: 3}
+  m_Script: {fileID: 11500000, guid: cb8ce002df7358041858d6e06178f9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isBarrier: 1
@@ -3962,7 +3949,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1961450227}
   - component: {fileID: 1961450226}
-  - component: {fileID: 1961450228}
   m_Layer: 0
   m_Name: Carro
   m_TagString: Untagged
@@ -4037,19 +4023,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1534279887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.514}
---- !u!114 &1961450228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961450225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f2b69359ec7b24eb438cf8dfb2f253, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parallaxFactor: 0.2
 --- !u!1 &1966971347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,8 +4323,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 820947740}
   - {fileID: 8934838487813102554}
+  - {fileID: 820947740}
   - {fileID: 144965110}
   - {fileID: 2119354796}
   - {fileID: 1553667522}
