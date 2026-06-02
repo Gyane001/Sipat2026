@@ -24,17 +24,6 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange;
 
-    private void Update()
-    {
-        // CORREÇÃO: Verifica se o DialogueManager existe antes de acessar
-        // (evita NullReferenceException durante a transição de cena)
-        var dm = DialogueManager.GetInstance();
-        if (dm == null) return;
-
-        if (playerInRange && !dm.dialogueIsPlaying && !isBarrier)
-        {
-    }
-    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -96,21 +85,19 @@ public class DialogueTrigger : MonoBehaviour
 
     }
 
+    // No topo da classe — lista compartilhada entre todos os NPCs
+    public static List<DialogueTrigger> todosOsNPCs = new List<DialogueTrigger>();
+
+    private void OnEnable() { todosOsNPCs.Add(this); }
+    private void OnDisable() { todosOsNPCs.Remove(this); }
+
     private bool VerificarTodosOsQuizzes()
     {
-        DialogueTrigger[] todosNPCs = FindObjectsOfType<DialogueTrigger>(true);
-
-        foreach (DialogueTrigger npc in todosNPCs)
+        foreach (DialogueTrigger npc in todosOsNPCs)
         {
             if (npc == this) continue;
-
-            if (npc.fazParteDoQuiz && !npc.acertouQuiz)
-            {
-                Debug.Log("O jogador ainda não passou pelo NPC: " + npc.gameObject.name);
-                return false;
-            }
+            if (npc.fazParteDoQuiz && !npc.acertouQuiz) return false;
         }
-
         return true;
     }
 }

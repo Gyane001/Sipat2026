@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Componentes")]
     private Rigidbody2D rb;
     private Animator animator;
-    
+
     // --- NOVO: Referência para o som dos passos ---
     public AudioSource audioPassos;
 
@@ -17,28 +17,27 @@ public class PlayerMovement : MonoBehaviour
     private float buttonInput = 0f;
     private bool isFacingRight = true;
 
+    private DialogueManager dialogueManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
-        // Se você esqueceu de arrastar no Inspector, ele tenta pegar o do próprio objeto
-        if (audioPassos == null)
-            audioPassos = GetComponent<AudioSource>();
+        dialogueManager = DialogueManager.GetInstance(); // ← uma vez só
+        if (audioPassos == null) audioPassos = GetComponent<AudioSource>();
     }
-
     void Update()
     {
+        if (dialogueManager != null && dialogueManager.dialogueIsPlaying)
         // ... (Lógica de bloqueio do diálogo continua aqui) ...
-        if (DialogueManager.GetInstance() != null && DialogueManager.GetInstance().dialogueIsPlaying)
         {
             moveInput = 0f;
             rb.velocity = Vector2.zero;
             if (animator != null) animator.SetFloat("Speed", 0);
-            
+
             // NOVO: Se entrar em diálogo, para o som imediatamente
             if (audioPassos.isPlaying) audioPassos.Stop();
-            
+
             return;
         }
 
@@ -66,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (DialogueManager.GetInstance() != null && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (dialogueManager != null && !dialogueManager.dialogueIsPlaying)
         {
             rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         }
