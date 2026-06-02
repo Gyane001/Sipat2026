@@ -37,25 +37,17 @@ public class DialogueManager : MonoBehaviour
     private const string WIN_TAG = "win";
     public int scoreTotal = 0;
 
-    private void Awake()
+   private void Awake()
+{
+    if (instance != null && instance != this)
     {
-        // CORREÇÃO: Se já existe uma instância de outra cena, destrói ESTA (a nova/duplicada)
-        // e mantém a antiga. MAS como cada cena tem seu próprio painel de UI,
-        // o correto é destruir a ANTIGA e ficar com a nova.
-        if (instance != null && instance != this)
-        {
-            // A instância antiga pertence a uma cena destruída — descarta ela.
-            // Isso garante que sempre usamos o DialogueManager da cena atual,
-            // que tem referências válidas para o painel de UI correto.
-            Destroy(instance.gameObject);
-        }
-
-        instance = this;
-
-        // CORREÇÃO: Garante que dialogueIsPlaying começa como false na nova cena,
-        // independente do estado da cena anterior.
-        dialogueIsPlaying = false;
+        Destroy(this); // ← destrói só este componente, não o objeto pai
+        return;
     }
+
+    instance = this;
+    dialogueIsPlaying = false;
+}
 
     public static DialogueManager GetInstance()
     {
