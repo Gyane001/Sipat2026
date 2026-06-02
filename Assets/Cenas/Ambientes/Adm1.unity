@@ -1465,7 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2358879706206979369, guid: 9562e12262646b4489cb3486fb950241, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2544996312483075813, guid: 9562e12262646b4489cb3486fb950241, type: 3}
       propertyPath: sceneToLoad
@@ -1797,7 +1797,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1203992723}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: OnPointerDownRight
           m_Mode: 1
@@ -1813,7 +1813,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1203992723}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: OnPointerUp
           m_Mode: 1
@@ -2271,6 +2271,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 295228786182999404, guid: d9fd32b5c96474545b405a5da8854325, type: 3}
   m_PrefabInstance: {fileID: 8934838487813102554}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1203992723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8716802563662097709, guid: d9fd32b5c96474545b405a5da8854325, type: 3}
+  m_PrefabInstance: {fileID: 8934838487813102554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34e2f9b5df72d14bb578acbfb6fcda1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1220059163
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,7 +3278,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1203992723}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: OnPointerDownLeft
           m_Mode: 1
@@ -3283,7 +3294,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1203992723}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
           m_MethodName: OnPointerUp
           m_Mode: 1
