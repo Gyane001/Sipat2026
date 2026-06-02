@@ -13,10 +13,9 @@ public class MapaManager_1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        // Corrigido: adicionado os parênteses ()
+        if (!collider.CompareTag("Player")) return;
         StartCoroutine(RotinaTrocarCaminhos());
     }
-
     private IEnumerator RotinaTrocarCaminhos()
     {
         // 1. Faz a transição de cena e espera
