@@ -36,8 +36,6 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.zero;
             if (animator != null) animator.SetFloat("Speed", 0);
             
-            // NOVO: Se entrar em diálogo, para o som imediatamente
-            if (audioPassos.isPlaying) audioPassos.Stop();
             
             return;
         }
