@@ -38,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cenas/FimDeJogo.unity
     guid: 1c7d421cbd92ea04f8f3b8736f1ec55a
-  - enabled: 0
-    path: Assets/Cenas/Ambientes/TESTE.unity
-    guid: cdb615096f2f92e478f20731964bf8ad
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 5dc4ed64e063ff94cb262842df551389, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 5858fd3446525d5429493adb34008bab, type: 2}
