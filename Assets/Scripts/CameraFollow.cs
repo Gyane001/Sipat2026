@@ -22,11 +22,14 @@ public class CameraFollow : MonoBehaviour
     }
 
     // FixedUpdate é melhor para seguir física (como o Rigidbody do Player)
-   // Troque FixedUpdate por LateUpdate
-    void LateUpdate()
-{
-    if (target == null) return; // segurança extra
-    Vector3 targetCamPos = target.position + offset;
-    transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
-}
+    void FixedUpdate()
+    {
+        // 1. Descobre a posição ONDE a câmera DEVERIA estar
+        //    (Posição atual do Alvo + a distância inicial)
+        Vector3 targetCamPos = target.position + offset;
+
+        // 2. Suaviza o movimento da câmera
+        //    Interpola linearmente da Posição Atual (A) para a Posição Alvo (B)
+        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+    }
 }
